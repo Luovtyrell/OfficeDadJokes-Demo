@@ -4,3 +4,4 @@ dist
 node_modules
 style.css.map
 test-results.html
+package-lock.json
