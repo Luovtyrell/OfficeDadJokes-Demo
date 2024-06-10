@@ -5,27 +5,32 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>OfficeDadJokes Demo</title>
+	<link rel="icon" type="image/png" href="./src/IMG/SVG/clown.svg">
 	<link rel="stylesheet" href="./src/styles/style.css">
 </head>
 
 <body>
-	<nav class="navbar navbar-dark bg-dark fixed-top">
+	<nav class="navbar navbar fixed-top">
 		<div class="container-fluid">
 			<a class="navbar-brand" id="weather"></a>
 		</div>
 	</nav>
 	<section class="mt-5" id="jokesArea">
-		<div class="card border-0 p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
-			<div class="col-lg-6 px-0">
-				<h1 class="display-4 fst-italic">Ready to laugh?</h1>
-				<div class="text-center">
-					<h6 id="jokeView"></h6>
-				</div>
-				<button type="button" id="button" class="btn btn-dark">Next joke!</button>
-				<div class="mt-3">
-					<img id="score1" src="./src/IMG/SVG/score1.png" alt="Score 1" class="score-button" data-score="1">
-					<img id="score2" src="./src/IMG/SVG/score2.png" alt="Score 2" class="score-button" data-score="2">
-					<img id="score3" src="./src/IMG/SVG/score3.png" alt="Score 3" class="score-button" data-score="3">
+		<div class="card border-0 p-4 p-md-5 mb-4">
+			<div class="d-flex justify-content-center align-items-center">
+				<div class="col-lg-6">
+					<h1 class="display-4 text-center">Ready to laugh?</h1>
+					<div class="text-center">
+						<h5 id="jokeView"></h5>
+					</div>
+					<div class="text-center mt-3">
+						<button type="button" id="button" class="btn btn-dark">Next joke!</button>
+					</div>
+					<div class="mt-3 text-center">
+						<img id="score1" src="./src/IMG/SVG/score1.svg" alt="Score 1" class="score-button" data-score="1">
+						<img id="score2" src="./src/IMG/SVG/score2.svg" alt="Score 2" class="score-button" data-score="2">
+						<img id="score3" src="./src/IMG/SVG/score3.svg" alt="Score 3" class="score-button" data-score="3">
+					</div>
 				</div>
 			</div>
 		</div>

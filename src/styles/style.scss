@@ -1,4 +1,15 @@
 @import "~bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Nabla&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+$font-family: "Courier New", Courier, monospace;
+$secondary-font: "Press Start 2P";
+$principal: palegoldenrod;
+
+body {
+    font-family: $font-family;
+    background-color: lightblue;
+}
 
 .score-button {
     width: 3.125em;
@@ -7,13 +18,51 @@
     margin: 0 0.625em;
     border-radius: 50%;
     border: 0.125em solid black;
+
+    &:hover {
+        transform: scale(1.2);
+        border-color: $principal;
+    }
+}
+
+.navbar {
+    background-color: $principal;
 }
 
 .navbar-brand {
     font-size: 0.9;
-    
+
     img {
         width: 2.2em;
         height: 2.2em;
+    }
+}
+
+.card {
+    background-image: url("../IMG/background2.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 100px;
+    box-shadow: 0 0 10px lightslategrey;
+    max-width: 70%;
+    margin: 1.25em auto;
+    margin-top: 12.5em;
+}
+
+.btn-dark {
+    background-color: $principal;
+    color: black;
+    border: 2px solid black;
+    padding: 0.75em 1.5em;
+    font-size: 1em;
+    font-family: $secondary-font;
+    border-radius: 2em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    text-transform: uppercase;
+
+    &:hover {
+        border: 2px solid white;
+        color: $principal;
     }
 }
