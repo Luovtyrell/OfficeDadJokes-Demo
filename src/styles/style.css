@@ -11972,4 +11972,12 @@ textarea.form-control-lg {
   margin: 0 0.625em;
   border-radius: 50%;
   border: 0.125em solid black;
+}
+
+.navbar-brand {
+  font-size: 0.9;
+}
+.navbar-brand img {
+  width: 2.2em;
+  height: 2.2em;
 }/*# sourceMappingURL=style.css.map */
