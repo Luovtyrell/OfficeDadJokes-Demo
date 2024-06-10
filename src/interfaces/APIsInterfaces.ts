@@ -9,6 +9,10 @@ export interface JokeReport {
     score: number
     date: string
 }
+export interface JokeChuckNorris {
+    id: string
+    value: string
+}
 
 //Weather
 export interface WeatherData {

@@ -1,7 +1,8 @@
-import { Joke, JokeReport } from "../interfaces/APIsInterfaces"
+import { Joke, JokeChuckNorris, JokeReport } from "../interfaces/APIsInterfaces"
 
 //Global variables
 const getJokeUrl = 'https://icanhazdadjoke.com/'
+const getChuckNorrisUrl = 'https://api.chucknorris.io/jokes/random'
 const jokeViewInHTML: HTMLElement | null = document.getElementById('jokeView')
 let reportJokes: JokeReport[] = []
 
@@ -14,8 +15,26 @@ export async function getJoke(): Promise<Joke> {
     })
     const jokeObj: Joke = await jokeData.json()
     jokeViewInHTML ? jokeViewInHTML.innerHTML = jokeObj.joke : console.error('Element with id jokeView not found')
-    console.log(jokeObj)
+    console.log('Dad Joke:', jokeObj)
     return jokeObj
+}
+
+export async function getChuckNorrisJoke(): Promise<JokeChuckNorris> {
+    const jokeDataChuck = await fetch(getChuckNorrisUrl, {
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    const jokeObjChuck: JokeChuckNorris = await jokeDataChuck.json()
+    jokeViewInHTML ? jokeViewInHTML.innerHTML = jokeObjChuck.value : console.error('Element with id jokeView not found')
+    console.log('Chuck Norris Joke:', jokeObjChuck)
+    return jokeObjChuck
+}
+
+export async function getRandomJoke(): Promise<Joke | JokeChuckNorris> {
+    const random = Math.floor(Math.random() * 2) + 1
+    console.log('1)Dad joke, 2)Chuck norris joke: // Number:', random)
+    return random === 1 ? getJoke() : getChuckNorrisJoke()
 }
 
 export function voteJoke(score: number): void {

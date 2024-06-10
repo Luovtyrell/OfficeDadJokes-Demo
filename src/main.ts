@@ -1,6 +1,5 @@
-import { getJoke, voteJoke, changeVote } from "./APIs/jokeFeatures.js";
+import { voteJoke, changeVote, getRandomJoke } from "./APIs/jokeFeatures.js";
 import { getWeather } from "./APIs/weatherFeatures.js";
-
 
 document.addEventListener('DOMContentLoaded', () => {
   const scoreButtons = document.querySelectorAll('.score-button')
@@ -11,8 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
   function addEventListeners() {
     if (buttonNextJoke) {
       buttonNextJoke.addEventListener('click', async () => {
-        const joke = await getJoke()
-        jokeText = joke.joke
+        const joke = await getRandomJoke()
+        if ('joke' in joke) { //Dad Joke joke interface: joke
+          jokeText = joke.joke
+        } else {  //Chuck Norris joke interface: value
+          jokeText = joke.value
+        }
       })
     }
     scoreButtons.forEach(button => {
@@ -22,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         changeVote(jokeText, score)
       })
     })
-    getJoke()
+    getRandomJoke()
   }
 
   async function displayWeather() {
@@ -34,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
       weatherElement.innerHTML = `<img src="${weatherIconUrl}" alt="Weather Icon">${temperatureCelsius}°C | ${locationName}`;
     }
   }
-  
   addEventListeners()
   displayWeather()
 })

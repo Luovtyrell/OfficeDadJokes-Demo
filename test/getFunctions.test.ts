@@ -1,5 +1,5 @@
-import { getJoke } from "../src/APIs/jokeFeatures.ts"
-import { Joke } from "../src/interfaces/APIsInterfaces.ts"
+import { getJoke, getChuckNorrisJoke } from "../src/APIs/jokeFeatures.ts"
+import { Joke, JokeChuckNorris } from "../src/interfaces/APIsInterfaces.ts"
 import { getWeather } from "../src/APIs/weatherFeatures.ts"
 import fetchMock from 'jest-fetch-mock'
 
@@ -36,5 +36,23 @@ describe('getWeather function', () => {
     const weatherData = await getWeather()
     expect(fetchMock).toHaveBeenCalledWith(expect.stringContaining('Barcelona'))
     expect(weatherData).toEqual(mockWeatherData)
+  })
+})
+
+//CHUCK NORRIS TEST
+describe('getChuckNorris function', () => {
+  beforeEach(() => {
+    fetchMock.resetMocks()
+  })
+
+  test('It returns a Chuck Norris joke object', async () => {
+    const chuckNorrisResponse: JokeChuckNorris = {
+      id: 'knsfsl',
+      value: 'Chuck Norris Joke',
+    }
+    fetchMock.mockResponseOnce(JSON.stringify(chuckNorrisResponse))
+
+    const jokeChuck = await getChuckNorrisJoke()
+    expect(jokeChuck).toEqual(chuckNorrisResponse)
   })
 })
