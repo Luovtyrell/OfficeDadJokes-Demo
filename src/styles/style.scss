@@ -1,2 +1,10 @@
-@import "~bootstrap/scss/bootstrap"
+@import "~bootstrap/scss/bootstrap";
 
+.score-button {
+    width: 3.125em;
+    height: 3.125em;
+    cursor: pointer;
+    margin: 0 0.625em;
+    border-radius: 50%;
+    border: 0.125em solid black;
+}

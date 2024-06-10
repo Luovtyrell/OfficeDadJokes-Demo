@@ -1,5 +1,5 @@
-import { getJoke } from "../src/APIs/getFunctions.ts"
-import { Joke } from "../src/models/apiModels"
+import { getJoke } from "../src/APIs/jokeFeatures.ts"
+import { Joke } from "../src/interfaces/APIsInterfaces.ts"
 import fetchMock from 'jest-fetch-mock'
 
 fetchMock.enableMocks()
