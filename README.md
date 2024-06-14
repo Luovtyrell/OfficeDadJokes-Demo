@@ -1,6 +1,6 @@
 # OfficeDadJokes-Demo
 
-![Project Screenshot](./src/IMG/demo.gif)
+<div align="center"><img src="./src/IMG/demo.gif" alt="Project Screenshot"></div>
 
 ## Description
 
@@ -109,12 +109,7 @@ OfficeDadJokes-Demo/
    npm install typescript
    npm install bootstrap
    npm install jest
-
-   ```
-
-3. Compile Sass files:
-   ```bash
-   npm run sass
+   npm install sass
    ```
 
 ### Configuration Files
